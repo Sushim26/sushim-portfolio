@@ -883,3 +883,5 @@ dl,dd{margin:0;}
 
 .exp-org-brand{cursor:pointer;}
 .exp-org-brand:focus-visible{outline:2px solid var(--ink);outline-offset:4px;}
+
+.exp-tenure{color:var(--ink-2)!important;font-weight:700;letter-spacing:-.01em;}
