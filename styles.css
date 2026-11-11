@@ -871,7 +871,6 @@ dl,dd{margin:0;}
 /* Company marks in the experience index */
 .exp-org-brand{display:flex;flex-direction:column;align-items:flex-end;gap:6px;}
 .exp-logo{display:block;width:auto;height:28px;max-width:138px;object-fit:contain;object-position:right center;}
-.exp-org-brand span{font-size:13.5px;font-weight:700;letter-spacing:-.02em;}
 .exp-org-brand em{font-style:normal;}
 @media (max-width:1000px){
   .exp-org-brand{flex-direction:row;align-items:center;gap:8px;}
@@ -881,3 +880,6 @@ dl,dd{margin:0;}
   .exp-logo{height:22px;max-width:96px;}
   .exp-org-brand{gap:7px;}
 }
+
+.exp-org-brand{cursor:pointer;}
+.exp-org-brand:focus-visible{outline:2px solid var(--ink);outline-offset:4px;}
