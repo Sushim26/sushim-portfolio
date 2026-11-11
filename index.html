@@ -84,6 +84,63 @@
   .work-card,.work-card h3 a span{transition:none;}
   .work-card:hover{transform:none;}
 }
+
+
+/* Project detail dialog */
+.work-card{position:relative;}
+.work-card-trigger{position:absolute;inset:0;z-index:2;width:100%;height:100%;padding:0;border:0;background:transparent;cursor:pointer;}
+.work-card-trigger:focus-visible{outline:3px solid #B4232F;outline-offset:4px;}
+.work-title{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;}
+.work-title span{flex:none;color:#B4232F;transition:transform .2s var(--ease-soft);}
+.work-card:hover .work-title span{transform:translate(2px,-2px);}
+.work-dialog{width:min(1000px,calc(100vw - 40px));max-width:none;max-height:calc(100dvh - 36px);padding:0;border:0;background:transparent;color:var(--ink);overflow:visible;}
+.work-dialog::backdrop{background:rgba(15,16,18,.62);backdrop-filter:blur(3px);}
+.work-dialog-panel{position:relative;max-height:calc(100dvh - 36px);overflow:auto;padding:clamp(24px,4vw,48px);background:var(--paper);border:1px solid rgba(11,12,14,.12);border-radius:8px;box-shadow:0 28px 90px rgba(0,0,0,.24);}
+.work-dialog-close{position:absolute;top:16px;right:18px;width:42px;height:42px;border:1px solid var(--line);border-radius:50%;background:var(--paper);color:var(--ink);font-size:28px;line-height:1;cursor:pointer;z-index:1;}
+.work-dialog-close:hover{background:var(--paper-2);}
+.work-dialog-close:focus-visible,.work-dialog-link:focus-visible{outline:2px solid #B4232F;outline-offset:3px;}
+.work-dialog-category{padding-right:55px;color:#B4232F;font-size:11px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;}
+.work-dialog-panel h2{max-width:850px;margin-top:12px;font-size:clamp(30px,4.5vw,54px);line-height:1.02;letter-spacing:-.055em;}
+.work-dialog-description{max-width:72ch;margin-top:12px;color:var(--muted);font-size:15px;line-height:1.65;}
+.work-dialog-highlights{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px;}
+.work-dialog-chip{padding:8px 12px;border:1px solid var(--line);border-radius:100px;background:var(--paper-2);font-size:11px;font-weight:700;color:var(--ink-2);}
+.work-dialog-preview{margin-top:22px;}
+.work-dialog-preview .work-preview{height:clamp(280px,42vh,430px);padding:20px;}
+.work-dialog-preview .preview-top{height:30px;font-size:10px;}
+.work-dialog-preview .preview-body{grid-template-columns:42px minmax(0,1fr);gap:15px;padding-top:16px;}
+.work-dialog-preview .preview-sidebar{gap:14px;}
+.work-dialog-preview .preview-sidebar i{width:16px;height:16px;}
+.work-dialog-preview .preview-main{gap:12px;}
+.work-dialog-preview .preview-title-line{height:10px;}
+.work-dialog-preview .preview-stats,.work-dialog-preview .preview-cortex-stats{gap:10px;}
+.work-dialog-preview .preview-stats b,.work-dialog-preview .preview-cortex-stats b{padding:12px;font-size:16px;}
+.work-dialog-preview .preview-stats b span,.work-dialog-preview .preview-cortex-stats b span{font-size:10px;}
+.work-dialog-preview .preview-progress{height:8px;}
+.work-dialog-preview .preview-row{gap:9px;padding:9px 12px;font-size:11px;}
+.work-dialog-preview .preview-row i{width:9px;height:9px;}
+.work-dialog-preview .preview-row b{font-size:10px;}
+.work-dialog-preview .preview-chart{height:90px;gap:12px;}
+.work-dialog-preview .preview-chart-labels{font-size:8px;}
+.work-dialog-preview .preview-tool-grid{gap:8px;}
+.work-dialog-preview .preview-tool-grid span{padding:12px;font-size:10px;}
+.work-dialog-preview .preview-case-list{gap:8px;}
+.work-dialog-preview .preview-case-list i{height:34px;}
+.work-dialog-link{display:inline-flex;align-items:center;gap:10px;margin-top:20px;padding:13px 19px;background:#B4232F;color:#fff;border-radius:4px;font-size:14px;font-weight:800;}
+.work-dialog-link:hover{background:#951C26;}
+.work-dialog-link span{font-size:18px;}
+@media(max-width:620px){
+  .work-dialog{width:100vw;max-width:none;max-height:100dvh;height:100dvh;}
+  .work-dialog-panel{height:100%;max-height:100dvh;padding:60px 20px 24px;border-radius:0;}
+  .work-dialog-close{top:12px;right:14px;}
+  .work-dialog-preview .work-preview{height:300px;padding:14px;}
+  .work-dialog-preview .preview-body{grid-template-columns:28px minmax(0,1fr);gap:9px;}
+  .work-dialog-preview .preview-stats b,.work-dialog-preview .preview-cortex-stats b{padding:8px;font-size:12px;}
+  .work-dialog-preview .preview-row{font-size:9px;}
+}
+@media(prefers-reduced-motion:reduce){
+  .work-title span{transition:none;}
+}
+
 </style>
 </head>
 <body>
