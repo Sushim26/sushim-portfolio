@@ -342,3 +342,64 @@
     nums.forEach(function (el) { cio.observe(el); });
   }
 })();
+
+
+/* ============================================================
+   SELECTED WORK — accessible project detail dialog
+   ============================================================ */
+(function () {
+  var dialog = document.getElementById('workDialog');
+  if (!dialog || typeof dialog.showModal !== 'function') return;
+
+  var title = document.getElementById('workDialogTitle');
+  var category = document.getElementById('workDialogCategory');
+  var description = document.getElementById('workDialogDescription');
+  var highlights = document.getElementById('workDialogHighlights');
+  var preview = document.getElementById('workDialogPreview');
+  var platformLink = document.getElementById('workDialogLink');
+  var closeButton = dialog.querySelector('.work-dialog-close');
+  var triggers = document.querySelectorAll('.work-card-trigger');
+
+  triggers.forEach(function (trigger) {
+    trigger.addEventListener('click', function () {
+      var card = trigger.closest('.work-card');
+      if (!card) return;
+
+      var heading = card.querySelector('.work-title');
+      var meta = card.querySelector('.work-card-meta');
+      var summary = card.querySelector('.work-card-copy p');
+      var outcome = card.querySelector('.work-outcome');
+      var visual = card.querySelector('.work-preview');
+
+      title.textContent = heading ? heading.childNodes[0].textContent.trim() : 'Project details';
+      category.textContent = meta ? meta.firstElementChild.textContent : '';
+      description.textContent = summary ? summary.textContent.trim() : '';
+      platformLink.href = trigger.getAttribute('data-platform-url') || '#';
+
+      highlights.replaceChildren();
+      (outcome ? outcome.textContent : '').split('·').map(function (item) {
+        return item.trim();
+      }).filter(Boolean).forEach(function (item) {
+        var chip = document.createElement('span');
+        chip.className = 'work-dialog-chip';
+        chip.textContent = item;
+        highlights.appendChild(chip);
+      });
+
+      preview.replaceChildren();
+      if (visual) {
+        var clone = visual.cloneNode(true);
+        clone.removeAttribute('aria-hidden');
+        preview.appendChild(clone);
+      }
+
+      dialog.showModal();
+      closeButton.focus();
+    });
+  });
+
+  closeButton.addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('click', function (event) {
+    if (event.target === dialog) dialog.close();
+  });
+})();
