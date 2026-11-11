@@ -526,10 +526,14 @@
         </div>
         <div class="work-card-copy">
           <div class="work-card-meta"><span>PEOPLE OPERATIONS</span><span>2025 — 2026</span></div>
-          <h3><a href="https://onboarding.hoichoi.tech/" target="_blank" rel="noopener noreferrer">AI-Native Onboarding Platform <span aria-hidden="true">↗</span></a></h3>
+          <h3><span class="work-title">AI-Native Onboarding Platform<span aria-hidden="true">↗</span></span></h3>
           <p>Turns induction into a tracked, 28-task journey—from document collection through the first 90 days.</p>
           <span class="work-outcome">28 tracked tasks · stage-gated</span>
         </div>
+        <button class="work-card-trigger" type="button" aria-label="View project details: AI-Native Onboarding Platform" data-platform-url="https://onboarding.hoichoi.tech/"></button>
+        <button class="work-card-trigger" type="button" aria-label="View project details: Org Performance & Review Engine" data-platform-url="https://performance.hoichoi.tv/"></button>
+        <button class="work-card-trigger" type="button" aria-label="View project details: AI Talent Studio" data-platform-url="https://talent-studio-six.vercel.app/"></button>
+        <button class="work-card-trigger" type="button" aria-label="View project details: hoichoi Cortex — 100 AI Use Cases" data-platform-url="https://hoichoios-console.vercel.app/"></button>
       </article>
 
       <article class="work-card">
@@ -547,7 +551,7 @@
         </div>
         <div class="work-card-copy">
           <div class="work-card-meta"><span>PERFORMANCE OS</span><span>2025</span></div>
-          <h3><a href="https://performance.hoichoi.tv/" target="_blank" rel="noopener noreferrer">Org Performance &amp; Review Engine <span aria-hidden="true">↗</span></a></h3>
+          <h3><span class="work-title">Org Performance &amp; Review Engine<span aria-hidden="true">↗</span></span></h3>
           <p>Review software and governance for a 200+ person organization, built around a balanced 25/25/25/25 model.</p>
           <span class="work-outcome">Annual review cycle · 4-part model</span>
         </div>
@@ -568,7 +572,7 @@
         </div>
         <div class="work-card-copy">
           <div class="work-card-meta"><span>AI RECRUITING TOOLS</span><span>2025 — 2026</span></div>
-          <h3><a href="https://talent-studio-six.vercel.app/" target="_blank" rel="noopener noreferrer">AI Talent Studio <span aria-hidden="true">↗</span></a></h3>
+          <h3><span class="work-title">AI Talent Studio<span aria-hidden="true">↗</span></span></h3>
           <p>Five AI-native tools for job design, resume review, interview preparation, outreach, and structured evaluation.</p>
           <span class="work-outcome">Five tools · one hiring workflow</span>
         </div>
@@ -589,12 +593,24 @@
         </div>
         <div class="work-card-copy">
           <div class="work-card-meta"><span>AI TRANSFORMATION</span><span>2026</span></div>
-          <h3><a href="https://hoichoios-console.vercel.app/" target="_blank" rel="noopener noreferrer">hoichoi Cortex — 100 AI Use Cases <span aria-hidden="true">↗</span></a></h3>
+          <h3><span class="work-title">hoichoi Cortex — 100 AI Use Cases<span aria-hidden="true">↗</span></span></h3>
           <p>AI transformation program and five-layer intelligence architecture across 20 departments.</p>
           <span class="work-outcome">100 use cases · 20 departments</span>
         </div>
       </article>
     </div>
+    <dialog class="work-dialog" id="workDialog" aria-labelledby="workDialogTitle">
+      <div class="work-dialog-panel">
+        <button class="work-dialog-close" type="button" aria-label="Close project details">×</button>
+        <div class="work-dialog-category" id="workDialogCategory"></div>
+        <h2 id="workDialogTitle"></h2>
+        <p class="work-dialog-description" id="workDialogDescription"></p>
+        <div class="work-dialog-highlights" id="workDialogHighlights"></div>
+        <div class="work-dialog-preview" id="workDialogPreview" aria-hidden="true"></div>
+        <a class="work-dialog-link" id="workDialogLink" target="_blank" rel="noopener noreferrer">Open platform <span aria-hidden="true">↗</span></a>
+      </div>
+    </dialog>
+
   </div>
 </section>
 
