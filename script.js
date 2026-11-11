@@ -373,7 +373,7 @@
 
       title.textContent = heading ? heading.childNodes[0].textContent.trim() : 'Project details';
       category.textContent = meta ? meta.firstElementChild.textContent : '';
-      description.textContent = summary ? summary.textContent.trim() : '';
+      description.textContent = trigger.getAttribute('data-dialog-description') || (summary ? summary.textContent.trim() : '');
       platformLink.href = trigger.getAttribute('data-platform-url') || '#';
 
       highlights.replaceChildren();
