@@ -19,8 +19,8 @@
   --sans:"Manrope", -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
 
   --shell:1360px;
-  --gut:clamp(22px, 5vw, 86px);
-  --sec-pad:clamp(112px, 15.5vw, 252px);
+  --gut:clamp(18px, 4vw, 64px);
+  --sec-pad:clamp(64px, 8vw, 124px);
   --ease:cubic-bezier(.22,1,.36,1);
 
   /* motion */
@@ -187,7 +187,7 @@ dl,dd{margin:0;}
   border-top:1px solid var(--line);
 }
 .spread-left{display:flex;flex-direction:column;justify-content:space-between;
-  gap:clamp(32px,8vw,150px);position:sticky;top:98px;align-self:start;}
+  gap:clamp(28px,4vw,72px);position:sticky;top:98px;align-self:start;}
 /* punched binder holes */
 .punch{display:flex;flex-direction:column;gap:14px;margin-bottom:4px;}
 .punch::before,.punch::after{content:"";width:11px;height:11px;border-radius:50%;
@@ -834,3 +834,35 @@ dl,dd{margin:0;}
   .cover-strip span {
     font-size: 16px;
   }
+
+
+/* Compact, device-aware spacing and resilient narrow layouts */
+@media (max-width:1000px){
+  :root{--sec-pad:clamp(72px,9vw,96px);}
+}
+@media (max-width:700px){
+  :root{--gut:clamp(18px,5vw,28px);--sec-pad:56px;}
+  .cover{padding-bottom:42px;}
+  .cover-reg{margin-bottom:24px;}
+  .cover-base{gap:16px;}
+  .about-data{margin-top:36px;}
+  .credential-row{margin-top:32px;}
+  .deck-head{gap:18px;margin-bottom:24px;}
+  .deck-head-l{gap:14px;}
+  .funnel-head,.arsenal-head,.index-head{gap:12px;}
+  .exp-row{padding-block:26px;}
+  .contact-top{gap:24px;}
+  .reach-row{padding-block:20px;}
+  .footer-end{padding-top:38px;}
+  .footer-doc{padding-block:30px;}
+}
+@media (max-width:420px){
+  :root{--gut:18px;--sec-pad:48px;}
+  body{font-size:15px;}
+  .wm-line{font-size:clamp(40px,14vw,58px);}
+  .cover-strip{gap:12px 18px;}
+  .slide{flex-basis:86vw;}
+  .about-statement{font-size:clamp(21px,7vw,28px);}
+  .deck-head h2{font-size:26px;}
+  .reach-value{overflow-wrap:anywhere;}
+}
