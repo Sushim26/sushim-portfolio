@@ -816,3 +816,21 @@ dl,dd{margin:0;}
   .footer-base{justify-content:flex-start;}
   .footer-mid{order:3;flex-basis:100%;}
 }
+/* Larger proof-point typography */
+.cover-strip {
+  gap: clamp(18px, 3vw, 48px);
+}
+
+.cover-strip span {
+  font-size: clamp(16px, 1.55vw, 20px);
+  line-height: 1.35;
+}
+
+.cover-strip b {
+  font-size: 1.08em;
+}
+
+@media (max-width: 700px) {
+  .cover-strip span {
+    font-size: 16px;
+  }
